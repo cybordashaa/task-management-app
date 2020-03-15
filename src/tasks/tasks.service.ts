@@ -38,4 +38,12 @@ export class TasksService {
     
 
   }
+  async updateTaskStatus(id: number, status: TasksStatus): Promise<Task>{
+
+    const task  = await this.getTaskById(id);
+    task.status = status;
+    await task.save(); 
+    return task;
+
+  }
 }
