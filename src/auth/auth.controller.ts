@@ -14,4 +14,9 @@ export class AuthController {
         //console.log(authCredentialsDto);
 
     }
+
+    @Post('/signin')
+    signIn(@Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto){
+        return this.authService.signIn(authCredentialsDto);
+    }
 }
