@@ -5,6 +5,7 @@ import {User} from "./user.entity";
 import {AuthGuard} from "@nestjs/passport";
 
 @Controller('auth')
+
 export class AuthController {
     constructor(private authService: AuthService) {
     }
@@ -21,9 +22,10 @@ export class AuthController {
         return this.authService.signIn(authCredentialsDto);
     }
 
-    @Post('/test')
-    @UseGuards(AuthGuard())
-    test(@Req() req){
-        console.log(req);
-    }
+    // @Post('/test')
+    // @UseGuards(AuthGuard())
+    // test(@Req() req){
+    //     console.log(req);
+    // }
+
 }
